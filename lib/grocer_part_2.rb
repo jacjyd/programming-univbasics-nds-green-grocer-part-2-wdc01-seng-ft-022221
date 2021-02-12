@@ -9,13 +9,13 @@ def apply_coupons(cart, coupons)
   cart.map do |thing|
     coupons.each do |sale|
       if thing[:item] == sale[:item] && sale[:num] < thing[:count]
-        binding.pry
         sale_things = {
           :item => thing[:item].concat(" W/COUPON"),
           :price => sale[:cost]/sale[:num],
           :clearance => true,
           :count => sale[:num]
         }
+        binding.pry
         thing[:count] -= sale[:num]
         cart << sale_things
         
