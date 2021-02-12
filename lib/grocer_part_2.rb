@@ -24,7 +24,7 @@ def apply_coupons(cart, coupons)
           :item => thing[:item].concat(" W/COUPON"),
           :price => sale[:cost]/sale[:num],
           :clearance => true,
-          :count => sale[:num]
+          :count => thing[:count]
         }
         
         cart << sale_things
