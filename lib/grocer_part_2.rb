@@ -6,9 +6,7 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
 
-  binding.pry
   cart.map do |thing|
-    binding.pry
     coupons.each do |sale|
       binding.pry
       if thing[:item] == sale[:item] && sale[:num] < thing[:count]
