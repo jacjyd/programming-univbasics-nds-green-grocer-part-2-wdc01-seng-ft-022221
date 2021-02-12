@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
           :clearance => true,
           :count => sale[:num]
         }
-        binding.pry
+        
         thing[:count] -= sale[:num]
         cart << sale_things
         
@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
     end 
     
   end
-  
+  cart
 end
 
 def apply_clearance(cart)
