@@ -8,12 +8,10 @@ def apply_coupons(cart, coupons)
   
   sale[:cost]/sale[:num]
   
-  if sale[:num] >= thing[:count]
-  
   cart.each do |thing|
     coupons.each do |sale|
-      if thing[:item] == sale[:item]
-        
+      if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
+        sale_things = Hash.
       end 
     end 
     
