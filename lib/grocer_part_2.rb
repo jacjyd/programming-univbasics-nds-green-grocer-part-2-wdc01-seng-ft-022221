@@ -4,16 +4,21 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+
   
-  
-  sale[:cost]/sale[:num]
-  
-  cart.each do |thing|
+  cart.map do |thing|
     coupons.each do |sale|
-      if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
+      if thing[:item] == sale[:item] && sale[:num] < thing[:count]
         sale_things = {
           :item => thing[:item].concat(" W/COUPON"),
-          :price =>             
+          :price => sale[:cost]/sale[:num],
+          :clearance => true,
+          :count => sale[:num]
+        }
+        
+        thing[:count] -= sale[:num]
+        
+      elsif thing
       end 
     end 
     
