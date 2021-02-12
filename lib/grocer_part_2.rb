@@ -11,7 +11,9 @@ def apply_coupons(cart, coupons)
   cart.each do |thing|
     coupons.each do |sale|
       if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
-        sale_things = Hash.
+        sale_things = {
+          :item => thing[:item].concat(" W/COUPON"),
+          :price =>             
       end 
     end 
     
