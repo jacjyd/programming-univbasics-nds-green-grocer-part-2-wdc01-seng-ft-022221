@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
         thing[:count] -= sale[:num]
         cart << sale_things
         
-      elsif thing[:item] == sale[:item] && sale[:num] > thing[:count]
+      elsif thing[:item] == sale[:item] && sale[:num] > thing[:count] && thing[:count] > 0
         sale_things = {
           :item => thing[:item] + (" W/COUPON"),
           :price => sale[:cost]/sale[:num],
@@ -24,7 +24,6 @@ def apply_coupons(cart, coupons)
           :count => thing[:count]
         }
         thing[:count] = 0
-        thing[:clearance] = false
         cart << sale_things
       
       end 
