@@ -24,6 +24,7 @@ def apply_coupons(cart, coupons)
           :count => thing[:count]
         }
         thing[:count] = 0
+        thing[:clearance] = false
         cart << sale_things
       
       end 
