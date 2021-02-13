@@ -13,6 +13,7 @@ def apply_coupons(cart, coupons)
           :clearance => thing[:clearance],
           :count => sale[:num]
         }
+        
         thing[:count] -= sale_things[:count]
     
         cart << sale_things
@@ -64,11 +65,10 @@ def checkout(cart, coupons)
   
   final_cart = apply_clearance(coupon_cart)
   
-  price = 0 
-binding.pry
+  price = 0
+  
   final_cart.each do |item|
     price += item[:count]*item[:price]
-   binding.pry
     if price > 100
       price = 0.9*price
     end
