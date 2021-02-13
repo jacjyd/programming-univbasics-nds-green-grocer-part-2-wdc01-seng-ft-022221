@@ -14,7 +14,7 @@ def apply_coupons(cart, coupons)
           :count => sale[:num]
         }
         thing[:count] -= sale_things[:count]
-        binding.pry
+    
         cart << sale_things
         
       elsif thing[:item] == sale[:item] && sale[:num] > thing[:count] && thing[:count] > 0
