@@ -19,6 +19,7 @@ def apply_coupons(cart, coupons)
         thing[:count] -= sale[:num]
         cart << sale_things
         
+        
       elsif thing[:item] == sale[:item] && sale[:num] > thing[:count]
         sale_things = {
           :item => thing[:item] + (" W/COUPON"),
