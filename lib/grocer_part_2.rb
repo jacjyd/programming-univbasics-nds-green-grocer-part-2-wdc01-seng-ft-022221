@@ -9,16 +9,16 @@ def apply_coupons(cart, coupons)
   cart.map do |thing|
     coupons.each do |sale|
       if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
-        binding.pry
+        #binding.pry
         sale_things = {
           :item => thing[:item] + (" W/COUPON"),
           :price => sale[:cost]/sale[:num],
           :clearance => true,
           :count => sale[:num]
         }
-        binding.pry
+        #binding.pry
         thing[:count] -= sale[:num]
-        binding.pry
+        #binding.pry
         cart << sale_things
         
       elsif thing[:item] == sale[:item] && sale[:num] > thing[:count]
