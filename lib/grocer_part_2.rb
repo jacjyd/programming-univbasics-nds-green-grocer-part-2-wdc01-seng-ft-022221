@@ -32,10 +32,6 @@ def apply_coupons(cart, coupons)
         thing[:count] = 0
         cart << sale_things
       
-      #elsif thing[:item] == sale[:item] && sale[:num] >= thing[:count]
-        #thing[:item] = thing[:item].concat(" W/COUPON")
-        #thing[:price] = sale[:cost]/sale[:num]
-      
       end 
       
     end 
