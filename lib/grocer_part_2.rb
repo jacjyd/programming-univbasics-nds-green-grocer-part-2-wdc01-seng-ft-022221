@@ -37,7 +37,7 @@ end
 def apply_clearance(cart)
   # REMEMBER: This method **should** update cart
   
-  cart.each do |thing|
+  cart.map do |thing|
     if thing[:clearance] == true
       thing[:price] *= 0.80
     end
