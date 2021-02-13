@@ -36,6 +36,7 @@ end
 
 def apply_clearance(cart)
   # REMEMBER: This method **should** update cart
+  
   new_cart=[]
   cart.each do |thing|
     if thing[:clearance] == true
