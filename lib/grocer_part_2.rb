@@ -18,6 +18,17 @@ def apply_coupons(cart, coupons)
         thing[:count] -= sale[:num]
         cart << sale_things
         
+      elsif thing[:item] == sale[:item] && sale[:num] > thing[:count]
+      if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
+        sale_things = {
+          :item => thing[:item].concat(" W/COUPON"),
+          :price => sale[:cost]/sale[:num],
+          :clearance => true,
+          :count => sale[:num]
+        }
+        thing[:count] -= sale[:num]
+        cart << sale_things
+      
       #elsif thing[:item] == sale[:item] && sale[:num] >= thing[:count]
         #thing[:item] = thing[:item].concat(" W/COUPON")
         #thing[:price] = sale[:cost]/sale[:num]
