@@ -18,21 +18,21 @@ def apply_coupons(cart, coupons)
     
         cart << sale_things
         
-      elsif thing[:item] == sale[:item] && sale[:num] > thing[:count] && thing[:count] > 0
-        sale_things = {
-          :item => thing[:item] + (" W/COUPON"),
-          :price => sale[:cost]/sale[:num],
-          :clearance => thing[:clearance],
-          :count => thing[:count]
-        }
-        thing[:count] = 0
-        cart << sale_things
+      #elsif thing[:item] == sale[:item] && sale[:num] > thing[:count] && thing[:count] > 0
+       # sale_things = {
+        #  :item => thing[:item] + (" W/COUPON"),
+         # :price => sale[:cost]/sale[:num],
+        #  :clearance => thing[:clearance],
+         # :count => thing[:count]
+        #}
+        #thing[:count] = 0
+        #cart << sale_things
       
       end 
       
     end 
   end
-binding.pry
+#binding.pry
   cart
 end
 
@@ -66,7 +66,7 @@ def checkout(cart, coupons)
   final_cart = apply_clearance(coupon_cart)
   
   price = 0
-  binding.pry
+  #binding.pry
   final_cart.each do |item|
     price += item[:count]*item[:price]
     if price > 100
