@@ -18,7 +18,7 @@ def apply_coupons(cart, coupons)
         }
         thing[:count] -= sale[:num]
         cart << sale_things
-        
+        sale.delete
         
       elsif thing[:item] == sale[:item] && sale[:num] > thing[:count]
         sale_things = {
