@@ -73,5 +73,5 @@ def checkout(cart, coupons)
       price = 0.9*price
     end
   end 
-  
+  price
 end
