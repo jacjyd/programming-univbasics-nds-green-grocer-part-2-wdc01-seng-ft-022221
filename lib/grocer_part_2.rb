@@ -42,7 +42,7 @@ def apply_clearance(cart)
       thing[:price] *= 0.80
     end
   end 
-  
+  cart
   
 end
 
