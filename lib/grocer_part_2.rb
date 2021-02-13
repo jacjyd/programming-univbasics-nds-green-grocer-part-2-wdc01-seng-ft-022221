@@ -7,7 +7,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
 
   cart.map do |thing|
-    coupons.each do |sale|
+    while thing[:count] >0 coupons.each do |sale|
       if thing[:item] == sale[:item] && sale[:num] <= thing[:count]
         #binding.pry
         sale_things = {
@@ -40,6 +40,7 @@ def apply_coupons(cart, coupons)
     end 
     
   end
+end
   cart
 end
 
